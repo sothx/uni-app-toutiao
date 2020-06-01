@@ -1,0 +1,54 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabBar/home/home",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		}
+        ,{
+            "path" : "pages/tabBar/publish/publish",
+            "style" : {
+				"navigationBarTitleText": "发布"
+			}
+        }
+        ,{
+            "path" : "pages/tabBar/video/video",
+            "style" : {
+				"navigationBarTitleText": "视频"
+			}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "每日头条",
+		"navigationBarBackgroundColor": "#D43D3D",
+		"backgroundColor": "#D43D3D"
+	},
+	"tabBar":{
+		"borderStyle":"black",
+		"backgroundColor":"#F8F8F8",
+		"color":"$8F8F94",
+		"selectedColor":"#F33E54",
+		"list":[
+			{
+				"pagePath":"pages/tabBar/home/home",
+				"iconPath":"static/img/tabbar/home.png",
+				"selectedIconPath":"static/img/tabbar/homeactive.png",
+				"text":"首页"
+			},
+			{
+				"pagePath":"pages/tabBar/publish/publish",
+				"iconPath":"static/img/tabbar/add.png",
+				"selectedIconPath":"static/img/tabbar/addactive.png",
+				"text":"发布"
+			},
+			{
+				"pagePath":"pages/tabBar/video/video",
+				"iconPath":"static/img/tabbar/guanzhu.png",
+				"selectedIconPath":"static/img/tabbar/guanzhuactive.png",
+				"text":"关注"
+			}
+		]
+	}
+}
