@@ -1,7 +1,7 @@
 {
     "name" : "uni-app-toutiao",
-    "appid" : "",
-    "description" : "",
+    "appid" : "__UNI__D5E1460",
+    "description" : "头条1.0",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
@@ -72,7 +72,7 @@
     "mp-toutiao" : {
         "usingComponents" : true
     },
-    "uniStatistics": {  
-        "enable": false
+    "uniStatistics" : {
+        "enable" : false
     }
 }

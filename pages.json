@@ -3,10 +3,20 @@
 		{
 			"path": "pages/tabBar/home/home",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": "首页",
+				"app-plus": {
+					"titleNView": false,
+					"subNVues": [
+						{
+							"id": "homeTitleNvue",
+							"path": "pages/tabBar/home/subNVue/homeTitle",
+							"type": "navigationBar"
+						}
+					]
+				}
 			}
-		}
-        ,{
+		},
+        {
             "path" : "pages/tabBar/publish/publish",
             "style" : {
 				"navigationBarTitleText": "发布"
