@@ -15,12 +15,12 @@
 
 <style lang="scss">
 	.home-header {
-		height: 100upx;
+		height: 100rpx;
 		background: #d43d3d;
-		padding: 10upx 50upx;
+		padding: 10rpx 50upx;
 		box-sizing: border-box;
 		position: fixed;
-		width: 750rpx;
+		width: 750upx;
 		z-index: 99;
 	}
 	.search-bar {
@@ -28,15 +28,15 @@
 		height: 80rpx;
 		display: flex;
 		align-items: center;
-		padding: 10upx 20upx;
+		padding: 10rpx 20rpx;
 		color: #505050;
-		border-radius: 10upx;
+		border-radius: 10rpx;
 		box-sizing: border-box;
 	}
 	
 	.search-input {
-		font-size: 32upx;
-		margin-left: 20upx;
+		font-size: 32rpx;
+		margin-left: 20rpx;
 	}
 	
 	.space{

@@ -19,13 +19,13 @@
 	/* #endif */
 	
 	.container {
-		width: 750upx;
+		width: 750rpx;
 		height: 100vh;
 		/* #ifndef APP-NVUE */
 		display: flex;
 		/* #endif */
 		flex-direction: column;
-		font-size: 36upx;
+		font-size: 36rpx;
 		font-family: 'STHeiti', 'Microsoft YaHei', 'Helvetica', 'Arial', sans-serif;
 		overflow: hidden;
 	}
