@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<homeHeader></homeHeader>
+		<homeHeader v-if="showHeader"></homeHeader>
 	</view>
 </template>
 
@@ -12,8 +12,13 @@
 		},
 		data() {
 			return {
-				
+				showHeader: true, // 是否显示自定义表头
 			}
+		},
+		onLoad() {
+			// #ifdef APP-PLUS
+			this.showHeader = false;
+			// #endif
 		},
 		methods: {
 			

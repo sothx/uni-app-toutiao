@@ -25,7 +25,7 @@
 	}
 	.search-bar {
 		background-color: #fff;
-		height: 80upx;
+		height: 80rpx;
 		display: flex;
 		align-items: center;
 		padding: 10upx 20upx;
