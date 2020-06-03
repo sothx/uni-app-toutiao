@@ -16,11 +16,11 @@
 	/*每个页面公共css */
 	/* #ifndef APP-NVUE */
 	@import "/static/iconfont/iconfont.css";
-	/* #endif */
-	
 	uni-page{
 		overflow: hidden;
 	}
+	/* #endif */
+	
 	
 	.container {
 		width: 750rpx;

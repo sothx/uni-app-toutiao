@@ -33,7 +33,7 @@
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "每日头条",
 		"navigationBarBackgroundColor": "#D43D3D",
-		"backgroundColor": "#D43D3D"
+		"backgroundColor": "#FFF"
 	},
 	"tabBar":{
 		"borderStyle":"black",
