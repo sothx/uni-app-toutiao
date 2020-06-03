@@ -18,6 +18,10 @@
 	@import "/static/iconfont/iconfont.css";
 	/* #endif */
 	
+	uni-page{
+		overflow: hidden;
+	}
+	
 	.container {
 		width: 750rpx;
 		height: 100vh;
