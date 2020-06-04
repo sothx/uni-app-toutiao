@@ -25,7 +25,15 @@
         {
             "path" : "pages/tabBar/publish/publish",
             "style" : {
-				"navigationBarTitleText": "发布"
+				"navigationBarTitleText": "",
+				"app-plus":{
+					"titleNView":{
+						"buttons":[
+							{"text":"取消", "fontSize":"18px", "float":"left"},
+							{"text":"发布", "fontSize":"18px", "float":"right"}
+						]
+					}
+				}
 			}
         }
         ,{
