@@ -10,18 +10,20 @@
 		<!-- 占位 -->
 		<view class="place"></view>
 		<!-- 内容 -->
-		<swiper @change="onSwiperChange" :current="tabIndex" class="tab-box" :duration="300">
-			<swiper-item class="swiper-item" v-for="(page,index) in tabList" :key="page.id">
-				<scroll-view @scrolltolower="loadMoreData" scroll-y class="panel-scroll-box">
-					<view class="news-page" v-for="(newsItem,newsIndex) in newsList" :key="newsIndex">
-						<!-- 引入组件 -->
-						<newsCell :newsItem="newsItem"></newsCell>
-					</view>
-					<!-- 上拉加载组件 -->
-					<loadMore :status="page.loadMoreStatus"></loadMore>
-				</scroll-view>
-			</swiper-item>
-		</swiper>
+		<pulldown ref="pdr" :top="top" @refresh="loadTabData">
+			<swiper @change="onSwiperChange" :current="tabIndex" class="tab-box" :duration="300">
+				<swiper-item class="swiper-item" v-for="(page,index) in tabList" :key="page.id">
+					<scroll-view @scrolltolower="loadMoreData" scroll-y class="panel-scroll-box">
+						<view class="news-page" v-for="(newsItem,newsIndex) in newsList" :key="newsIndex">
+							<!-- 引入组件 -->
+							<newsCell @cellTap="handleCellTap"  :newsItem="newsItem"></newsCell>
+						</view>
+						<!-- 上拉加载组件 -->
+						<loadMore :status="page.loadMoreStatus"></loadMore>
+					</scroll-view>
+				</swiper-item>
+			</swiper>
+		</pulldown>
 		
 		<!-- 底部占位 -->
 		<view :style="{height:footerbottom}"></view>
@@ -33,11 +35,13 @@
 	import interfaces from '../../../utils/interfaces.js';
 	import newsCell from '../../../components/home/newsCell.vue';
 	import loadMore from '../../../components/loadMore/loadMore.vue';
+	import pulldown from '../../../components/pulldown/pulldown.vue';
 	export default {
 		components: {
 			homeHeader,
 			newsCell,
-			loadMore
+			loadMore,
+			pulldown
 		},
 		data() {
 			return {
@@ -49,12 +53,15 @@
 				size: 10,
 				newsid: "",
 				newsList: [],
-				footerbottom:"0"
+				footerbottom:"0",
+				top:192, // 与顶部的距离 单位rpx
+				navigateFlag: false
 			}
 		},
 		onLoad() {
 			// #ifdef APP-PLUS
 			this.showHeader = false;
+			this.top = 92;
 			// #endif
 			
 			// #ifdef H5
@@ -112,6 +119,7 @@
 					success: (res => {
 						// console.log(res.data)
 						this.newsList = res.data;
+						this.$refs.pdr && this.$refs.pdr.endPulldownRefresh();
 					})
 				})
 			},
@@ -136,6 +144,21 @@
 						}
 					})
 				})
+			},
+			handleCellTap(article_url){
+				if(this.navigateFlag){
+					return;
+				}
+				
+				this.navigateFlag = true;
+				
+				uni.navigateTo({
+					url:`./article?url=${article_url}`
+				})
+				
+				setTimeout(() => {
+					this.navigateFlag = false;
+				},200)
 			}
 		}
 	}

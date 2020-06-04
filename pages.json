@@ -16,6 +16,12 @@
 				}
 			}
 		},
+		{
+			"path": "pages/tabBar/home/article",
+			"style": {
+				"navigationBarTitleText": "今天头条"
+			}
+		},
         {
             "path" : "pages/tabBar/publish/publish",
             "style" : {

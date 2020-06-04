@@ -1,5 +1,5 @@
 <template>
-	<view class="news-label-cell">
+	<view class="news-label-cell" @tap="$emit('cellTap',newsItem.article_url)">
 		<!-- 详细信息 -->
 		<view class="label-cell-detail">
 			<!-- title -->
