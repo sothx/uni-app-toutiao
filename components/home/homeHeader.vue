@@ -3,7 +3,7 @@
 		<view class="home-header">
 			<view class="search-bar">
 				<view class="icon iconfont">&#xe600;</view>
-				<input type="text" class="search-input" placeholder="学习编程找米修在线">
+				<input type="text" class="search-input" placeholder="搜索栏">
 			</view>
 		</view>
 		<view class="space"></view>

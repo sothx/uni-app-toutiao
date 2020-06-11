@@ -2,10 +2,14 @@
 	<view class="container publish-page">
 		<!-- 编辑区域 -->
 		<view class="edit">
-			<textarea placeholder="分享新鲜事" auto-height="true" cursor-spacing="500"></textarea>
+			<textarea v-model="editText" placeholder="分享新鲜事" auto-height="true" cursor-spacing="500"></textarea>
 		</view>
 		<!-- 添加图片 -->
 		<view class="imgs-wrap">
+			<view class="file" v-if="filesArray.length > 0" v-for="(file,index) in filesArray" :key="index">
+				<image :src="file" mode="scaleToFill"></image>
+				<view class="del" @tap="deleteImg(index)">x</view>
+			</view>
 			<view class="add-img" @tap="insertImg">
 				<view class="icon iconfont">&#xe603;</view>
 			</view>
@@ -23,10 +27,27 @@
 </template>
 
 <script>
+	import interfaces from '../../../utils/interfaces.js'
 	export default {
 		data() {
 			return {
 				footerbottom: "0",
+				filesArray: [],
+				limit:3,
+				editText: ''
+			}
+		},
+		onNavigationBarButtonTap(e) {
+			console.log(e)
+			if(e.index === 1) {
+					// 发布
+					this.upload();
+			}else if (e.index === 0) {
+				// home 跳转
+				// this.$router.push("/");
+				uni.switchTab({
+					url: "../home/home"
+				});
 			}
 		},
 		onLoad() {
@@ -54,6 +75,46 @@
 						// console.log(res);
 						this.filesArray = [...this.filesArray, ...res.tempFilePaths];
 					})
+				})
+			},
+			deleteImg(index) {
+				uni.showModal({
+					title: '提示',
+					content: "确定要删除此项吗？",
+					success: res => {
+						// console.log(res)
+						if(res.confirm) {
+							this.filesArray.splice(index,1)
+						}
+					}
+				})
+			},
+			upload() {
+				// 参数
+				let params = {
+					title: this.editText,
+					source: '米斯特吴',
+					comment_count: 10,
+					datetime: new Date()
+				}
+				
+				// 发起请求
+				this.request({
+					url: interfaces.postUpload,
+					method: 'POST',
+					data: params,
+					success: res => {
+						console.log(res)
+						uni.showToast({
+							title: '发布成功!',
+							icon:'success'
+						})
+						// this.$router.push('/');
+						// this.$forceUpdate();
+						uni.switchTab({
+							url: "../home/home"
+						});
+					}
 				})
 			}
 		}

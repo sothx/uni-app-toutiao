@@ -6,7 +6,7 @@
 			<!-- 导航栏 -->
 			<div class="search-bar">
 				<text class="iconfont icon-search">&#xe65c;</text>
-				<input type="text" class="input-box" placeholder="学习编程,找米修在线">
+				<input type="text" class="input-box" placeholder="搜索栏">
 			</div>
 		</header>
 	</div>

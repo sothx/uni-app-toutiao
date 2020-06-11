@@ -29,22 +29,28 @@
 				"app-plus":{
 					"titleNView":{
 						"buttons":[
-							{"text":"取消", "fontSize":"18px", "float":"left"},
-							{"text":"发布", "fontSize":"18px", "float":"right"}
+							{"text":"取消", "fontSize":"16px", "float":"left"},
+							{"text":"发布", "fontSize":"16px", "float":"right"}
 						]
 					}
 				}
 			}
-        }
-        ,{
+        },
+		{
             "path" : "pages/tabBar/video/video",
             "style" : {
 				"navigationBarTitleText": "视频"
 			}
-        }
+        },
+		{
+			"path": "pages/tabBar/video/videoDetail",
+			"style": {
+				"navigationBarTitleText": "今天头条"
+			}
+		}
     ],
 	"globalStyle": {
-		"navigationBarTextStyle": "white",
+		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "每日头条",
 		"navigationBarBackgroundColor": "#D43D3D",
 		"backgroundColor": "#FFF"
